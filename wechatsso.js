@@ -5,7 +5,7 @@ var endStr = '&state=';
 function signupWithWeChat() {
     localStorage.setItem('flag', 1);
     var appid = 'wxf6e82a579a451ba0';
-    var redirectUrl = 'http://127.0.0.1:5502/wechatsso.html';
+    var redirectUrl = 'https://wechatssolanghamcheck.netlify.app/wechatsso.html';
     var wechatOAuthUrl = 'https://open.weixin.qq.com/connect/qrconnect?appid=' + appid + '&redirect_uri=' + encodeURIComponent(redirectUrl) + '&response_type=code&scope=snsapi_login#wechat_redirect';
     window.location.href = wechatOAuthUrl
 }
@@ -13,7 +13,7 @@ function signupWithWeChat() {
 function loginWithWeChat() {
     localStorage.setItem('flag', 2);
     var appid = 'wxf6e82a579a451ba0';
-    var redirectUrl = 'http://127.0.0.1:5502/wechatsso.html';
+    var redirectUrl = 'https://wechatssolanghamcheck.netlify.app/wechatsso.html';
     var wechatOAuthUrl = 'https://open.weixin.qq.com/connect/qrconnect?appid=' + appid + '&redirect_uri=' + encodeURIComponent(redirectUrl) + '&response_type=code&scope=snsapi_login#wechat_redirect';
     window.location.href = wechatOAuthUrl
 }
@@ -94,7 +94,7 @@ window.onload = function(){
     var redirectionUrl = window.location.href
     var flag = localStorage.getItem("flag")
     openID = redirectionUrl.substring(redirectionUrl.indexOf(startStr) + startStr.length, redirectionUrl.indexOf(endStr, redirectionUrl.indexOf(startStr) + startStr.length));
-    if(redirectionUrl.startsWith("http://127.0.0.1:5502/")){
+    if(redirectionUrl.startsWith("https://wechatssolanghamcheck.netlify.app/wechatsso.html")){
     if(flag==="1"){
         document.getElementById("main_screen").style.display = "none";
         document.getElementById("form_screen").style.display = "";
