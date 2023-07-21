@@ -62,8 +62,8 @@ function gravtySignup(){
 
 function gravtyLogin(){
     var memberSignupObj = {
-    "code": openID,
-    "platform": "website"
+        "code": openID,
+        "platform": "website"
     }
     document.getElementById("main_screen").style.display = "none";
     document.getElementById("form_screen").style.display = "none";
