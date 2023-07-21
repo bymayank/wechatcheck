@@ -25,9 +25,9 @@ function gravtySignup(){
         "code": openID,
         "user":{
             "first_name":document.getElementById("first_name").value,
-            "last_name":document.getElementById("last_name").value,
-            "email":document.getElementById("email").value
+            "last_name":document.getElementById("last_name").value
         },
+        "mobile":document.getElementById("mobile").value,
         "enrolling_sponsor":4,
         "platform": "website"
     }
@@ -49,6 +49,7 @@ function gravtySignup(){
             document.getElementById("success-message").style.display = "";
             document.getElementById("error-message").style.display = "none";
             document.getElementById("loading-message").style.display = "none";
+            document.getElementById("error-message-again").style.display = "none";
         },
         error: function(err) {
             document.getElementById("main_screen").style.display = "";
@@ -56,6 +57,7 @@ function gravtySignup(){
             document.getElementById("success-message").style.display = "none";
             document.getElementById("error-message").style.display = "";
             document.getElementById("loading-message").style.display = "none";
+            document.getElementById("error-message-again").style.display = "none";
         }
     });
 }
@@ -69,6 +71,7 @@ function gravtyLogin(){
     document.getElementById("form_screen").style.display = "none";
     document.getElementById("error-message").style.display = "none";
     document.getElementById("loading-message").style.display = "";
+    document.getElementById("error-message-again").style.display = "none";
     $.ajax({
         type: 'post',
         url: "https://gravty.devint31.gravty.info/api/v1/members/social/wechat/login/",
@@ -81,6 +84,7 @@ function gravtyLogin(){
             document.getElementById("success-message").style.display = "";
             document.getElementById("error-message").style.display = "none";
             document.getElementById("loading-message").style.display = "none";
+            document.getElementById("error-message-again").style.display = "none";
         },
         error: function(err) {
             document.getElementById("main_screen").style.display = "";
@@ -88,6 +92,7 @@ function gravtyLogin(){
             document.getElementById("success-message").style.display = "none";
             document.getElementById("error-message").style.display = "none";
             document.getElementById("loading-message").style.display = "none";
+            document.getElementById("error-message-again").style.display = "";
         }
     });
 }
@@ -103,6 +108,7 @@ window.onload = function(){
         document.getElementById("success-message").style.display = "none";
         document.getElementById("error-message").style.display = "none";
         document.getElementById("loading-message").style.display = "none";
+        document.getElementById("error-message-again").style.display = "none";
         localStorage.setItem('flag', '');
     }
     else if (flag==="2" && openID !='' && openID != 'http'){
@@ -115,6 +121,7 @@ window.onload = function(){
         document.getElementById("success-message").style.display = "none";
         document.getElementById("error-message").style.display = "none";
         document.getElementById("loading-message").style.display = "none";
+        document.getElementById("error-message-again").style.display = "none";
     }
     }
     else{
