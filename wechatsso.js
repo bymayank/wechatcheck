@@ -37,7 +37,7 @@ function gravtySignup(){
         async: false,
         dataType: "json",
         type: 'post',
-        url: "https://fleet.devint15.gravty.info/api/v1/members/social/wechat/",
+        url: "https://gravty.devint31.gravty.info/api/v1/members/social/wechat/",
         data: JSON.stringify(memberSignupObj),
         contentType: "application/json; charset=utf-8",
         traditional: true,
@@ -69,7 +69,7 @@ function gravtyLogin(){
     document.getElementById("loading-message").style.display = "";
     $.ajax({
         type: 'post',
-        url: "https://fleet.devint15.gravty.info/api/v1/members/social/wechat/login/",
+        url: "https://gravty.devint31.gravty.info/api/v1/members/social/wechat/login/",
         data: JSON.stringify(memberSignupObj),
         contentType: "application/json; charset=utf-8",
         traditional: true,
