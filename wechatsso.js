@@ -4,6 +4,7 @@ var endStr = '&state=';
 
 function signupWithWeChat() {
     localStorage.setItem('flag', 1);
+    openID = '';
     var appid = 'wxf6e82a579a451ba0';
     var redirectUrl = 'https://wechatssolanghamcheck.netlify.app/wechatsso.html';
     var wechatOAuthUrl = 'https://open.weixin.qq.com/connect/qrconnect?appid=' + appid + '&redirect_uri=' + encodeURIComponent(redirectUrl) + '&response_type=code&scope=snsapi_login#wechat_redirect';
@@ -12,6 +13,7 @@ function signupWithWeChat() {
 
 function loginWithWeChat() {
     localStorage.setItem('flag', 2);
+    openID = '';
     var appid = 'wxf6e82a579a451ba0';
     var redirectUrl = 'https://wechatssolanghamcheck.netlify.app/wechatsso.html';
     var wechatOAuthUrl = 'https://open.weixin.qq.com/connect/qrconnect?appid=' + appid + '&redirect_uri=' + encodeURIComponent(redirectUrl) + '&response_type=code&scope=snsapi_login#wechat_redirect';
@@ -93,12 +95,9 @@ function gravtyLogin(){
 window.onload = function(){
     var redirectionUrl = window.location.href
     var flag = localStorage.getItem("flag")
-    window.history.back = function(){
-        localStorage.setItem('flag', '');
-    }
     openID = redirectionUrl.substring(redirectionUrl.indexOf(startStr) + startStr.length, redirectionUrl.indexOf(endStr, redirectionUrl.indexOf(startStr) + startStr.length));
     if(redirectionUrl.startsWith("https://wechatssolanghamcheck.netlify.app/wechatsso.html")){
-    if(flag==="1"){
+    if(flag==="1" && openID !=''){
         document.getElementById("main_screen").style.display = "none";
         document.getElementById("form_screen").style.display = "";
         document.getElementById("success-message").style.display = "none";
@@ -106,7 +105,7 @@ window.onload = function(){
         document.getElementById("loading-message").style.display = "none";
         localStorage.setItem('flag', '');
     }
-    else if (flag==="2"){
+    else if (flag==="2" && openID !=''){
         gravtyLogin();
         localStorage.setItem('flag', '');
     }
