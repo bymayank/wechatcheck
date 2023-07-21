@@ -61,7 +61,7 @@
     .form-style-1 input[type=search],
     .form-style-1 input[type=time],
     .form-style-1 input[type=url],
-    .form-style-1 input[type=email],
+    .form-style-1 input[type=mobile],
     textarea, 
     select{
       box-sizing: border-box;
@@ -83,7 +83,7 @@
     .form-style-1 input[type=search]:focus,
     .form-style-1 input[type=time]:focus,
     .form-style-1 input[type=url]:focus,
-    .form-style-1 input[type=email]:focus,
+    .form-style-1 input[type=mobile]:focus,
     .form-style-1 textarea:focus, 
     .form-style-1 select:focus{
       -moz-box-shadow: 0 0 8px #88D5E9;
@@ -132,8 +132,8 @@
       <ul class="form-style-1">
           <li><label>Full Name <span class="required">*</span></label><input type="text" name="field1" class="field-divided" id="first_name" placeholder="First" /> <input type="text" name="field2" class="field-divided" id="last_name" placeholder="Last" /></li>
           <li>
-              <label>Email <span class="required">*</span></label>
-              <input type="email" name="field3" class="field-long" id="email" />
+              <label>Mobile <span class="required">*</span></label>
+              <input type="mobile" name="field3" class="field-long" id="mobile" />
           </li>
           <li>
               <button type="submit" onclick="gravtySignup()">Signup</button>
@@ -149,6 +149,9 @@
   </div>
   <div id="error-message" class="form-style-1" style="display: none; font-size: 30px; color: red;">
     Already Exists Please Login
+  </div>
+  <div id="error-message-again" class="form-style-1" style="display: none; font-size: 30px; color: red;">
+    No Member Exist. Please Sign Up
   </div>
 </body>
 </html> 
