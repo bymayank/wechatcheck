@@ -97,7 +97,7 @@ window.onload = function(){
     var flag = localStorage.getItem("flag")
     openID = redirectionUrl.substring(redirectionUrl.indexOf(startStr) + startStr.length, redirectionUrl.indexOf(endStr, redirectionUrl.indexOf(startStr) + startStr.length));
     if(redirectionUrl.startsWith("https://wechatssolanghamcheck.netlify.app/wechatsso.html")){
-    if(flag==="1" && openID !=''){
+    if(flag==="1" && openID !='' && openID != 'http'){
         document.getElementById("main_screen").style.display = "none";
         document.getElementById("form_screen").style.display = "";
         document.getElementById("success-message").style.display = "none";
@@ -105,7 +105,7 @@ window.onload = function(){
         document.getElementById("loading-message").style.display = "none";
         localStorage.setItem('flag', '');
     }
-    else if (flag==="2" && openID !=''){
+    else if (flag==="2" && openID !='' && openID != 'http'){
         gravtyLogin();
         localStorage.setItem('flag', '');
     }
