@@ -93,7 +93,7 @@ function gravtyLogin(){
 window.onload = function(){
     var redirectionUrl = window.location.href
     var flag = localStorage.getItem("flag")
-    window.history.forward = function(){
+    window.history.back = function(){
         localStorage.setItem('flag', '');
     }
     openID = redirectionUrl.substring(redirectionUrl.indexOf(startStr) + startStr.length, redirectionUrl.indexOf(endStr, redirectionUrl.indexOf(startStr) + startStr.length));
