@@ -39,7 +39,7 @@ function gravtySignup(){
         async: false,
         dataType: "json",
         type: 'post',
-        url: "https://gravtyqa.gravtee.com/api/v1/members/social/wechat/",
+        url: "https://apitesting.gravtee.com/api/v1/members/social/wechat/",
         data: JSON.stringify(memberSignupObj),
         contentType: "application/json; charset=utf-8",
         traditional: true,
@@ -74,7 +74,7 @@ function gravtyLogin(){
     document.getElementById("error-message-again").style.display = "none";
     $.ajax({
         type: 'post',
-        url: "https://gravtyqa.gravtee.com/api/v1/members/social/wechat/login/",
+        url: "https://apitesting.gravtee.com/api/v1/members/social/wechat/login/",
         data: JSON.stringify(memberSignupObj),
         contentType: "application/json; charset=utf-8",
         traditional: true,
